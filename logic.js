@@ -133,3 +133,12 @@ function setUp() {
 	}
 	return (passwordViewer.value = password);
 }
+
+//COPY GENERATED PASSWORD TO CLIPBOARD
+copyButton.addEventListener('click', function() {
+	let copyPassword = document.querySelector('#password');
+	copyPassword.select();
+	copyPassword.setSelectionRange(0, 99999);
+	document.execCommand('copy');
+	alert('Password has been copied to your Clipboard!');
+});
