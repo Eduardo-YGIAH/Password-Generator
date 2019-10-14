@@ -16,3 +16,13 @@ const charset = {
 	nums: '0123456789',
 	specialCharacters: '!@#$%^&*()_+~`|}{[]:;?><,./-=',
 };
+
+//SELECTION OF HTML ELEMENTS
+const generateButton = document.querySelector('#generate');
+const passwordViewer = document.querySelector('#password');
+const copyButton = document.querySelector('#copy');
+
+//SETTING VARIABLES
+let tempN;
+let num;
+let password;
