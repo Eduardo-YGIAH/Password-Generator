@@ -8,22 +8,30 @@
 		<link rel="stylesheet" href="styles.css" />
 	</head>
 	<body>
-		<header>
-			<h1>Password Generator</h1>
-		</header>
-		<h2>Generate a Password</h2>
-		<textarea
-			readonly
-			id="password"
-			placeholder="Your Secure Password"
-			aria-label="Generated Password"
-		></textarea>
-		<button id="generate">
-			Generate Password
-		</button>
-		<button id="copy">
-			Copy to Clipboard
-		</button>
+		<div class="container">
+			<header>
+				<h1 class="title">Password Generator</h1>
+			</header>
+			<div class="frame">
+				<h2 class="sub-title">Generate a Password</h2>
+				<hr />
+				<textarea
+					class="output-area"
+					readonly
+					id="password"
+					placeholder="Your Secure Password"
+					aria-label="Generated Password"
+				></textarea>
+				<div class="btn-area">
+					<button id="generate" class="btn active">
+						Generate Password
+					</button>
+					<button id="copy" class="btn inactive">
+						Copy to Clipboard
+					</button>
+				</div>
+			</div>
+		</div>
 		<script src="logic.js"></script>
 	</body>
 </html>
