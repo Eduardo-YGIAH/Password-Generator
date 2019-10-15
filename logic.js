@@ -131,6 +131,7 @@ function setUp() {
 			'Oopps, I failed to cover those settings... Please try again with different settings.',
 		);
 	}
+	changeToActiveState();
 	return (passwordViewer.value = password);
 }
 
@@ -141,4 +142,20 @@ copyButton.addEventListener('click', function() {
 	copyPassword.setSelectionRange(0, 99999);
 	document.execCommand('copy');
 	alert('Password has been copied to your Clipboard!');
+	changeToInactiveState();
+	passwordViewer.value = '';
 });
+
+//CHANGE BUTTON STATE - function declaration
+
+function changeToActiveState() {
+	copyButton.classList.remove('inactive');
+	copyButton.classList.add('active');
+	return;
+}
+
+function changeToInactiveState() {
+	copyButton.classList.remove('active');
+	copyButton.classList.add('inactive');
+	return;
+}
