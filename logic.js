@@ -129,13 +129,19 @@ function setUp() {
 
 //COPY GENERATED PASSWORD TO CLIPBOARD
 copyButton.addEventListener('click', function() {
-	let copyPassword = document.querySelector('#password');
-	copyPassword.select();
-	copyPassword.setSelectionRange(0, 99999);
-	document.execCommand('copy');
-	alert('Password has been copied to your Clipboard!');
-	changeToInactiveState(copyButton);
-	passwordViewer.value = '';
+	if (passwordViewer.value !== password) {
+		alert(
+			"There is nothing to copy! Why don't you try to generate a password first?",
+		);
+	} else {
+		let copyPassword = document.querySelector('#password');
+		copyPassword.select();
+		copyPassword.setSelectionRange(0, 99999);
+		document.execCommand('copy');
+		alert('Password has been copied to your Clipboard!');
+		changeToInactiveState(copyButton);
+		passwordViewer.value = '';
+	}
 });
 
 //CHANGE BUTTON STATE - function declaration
