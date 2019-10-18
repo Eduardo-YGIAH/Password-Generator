@@ -34,23 +34,15 @@ let password;
 
 //LOGIC ON BUTTON CLICK
 generateButton.addEventListener('click', function() {
-	//DEFINING NUMBER OF CHARACTERES FOR PASSWORD
 	tempN = prompt(
 		'Please select your desired password length between 8 and 128 characters.',
 	);
-	if (false) {
-		alert('You need to answer the question to generate your new password.');
-		tempN = prompt(
-			'Please select your desired password length between 8 and 128 characters.',
-		);
-		setUp();
-	} else {
-		setUp();
-	}
+	setUp();
 });
 
-//FUNCTION DEFINITION FOR SETTINGS LOGIC
+//FUNCTION DEFINITION FOR LOGIC
 function setUp() {
+	//DEFINING NUMBER OF CHARACTERES FOR PASSWORD
 	num = Number(tempN);
 	while (num < 8 || num > 128 || !isNumber(num)) {
 		tempN = prompt('Invalid! please select a number between 8 and 128.');
@@ -131,7 +123,7 @@ function setUp() {
 			'Oopps, I failed to cover those settings... Please try again with different settings.',
 		);
 	}
-	changeToActiveState();
+	changeToActiveState(copyButton);
 	return (passwordViewer.value = password);
 }
 
@@ -142,20 +134,20 @@ copyButton.addEventListener('click', function() {
 	copyPassword.setSelectionRange(0, 99999);
 	document.execCommand('copy');
 	alert('Password has been copied to your Clipboard!');
-	changeToInactiveState();
+	changeToInactiveState(copyButton);
 	passwordViewer.value = '';
 });
 
 //CHANGE BUTTON STATE - function declaration
 
-function changeToActiveState() {
-	copyButton.classList.remove('inactive');
-	copyButton.classList.add('active');
+function changeToActiveState(element) {
+	element.classList.remove('inactive');
+	element.classList.add('active');
 	return;
 }
 
-function changeToInactiveState() {
-	copyButton.classList.remove('active');
-	copyButton.classList.add('inactive');
+function changeToInactiveState(element) {
+	element.classList.remove('active');
+	element.classList.add('inactive');
 	return;
 }
