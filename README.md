@@ -3,8 +3,8 @@
 Password-Generator is a responsive web app that generates a password with the
 settings declared by the user.
 
-The user is able to generate the password with a the number of characteres of
-his/her choice and using lower cases, upper cases, numbers or/and special
+The user is able to generate the password with the number of characteres of
+his/her choice within a given range and using lower cases, upper cases, numbers or/and special
 characteres as he/she wishes.
 
 ## Preview
