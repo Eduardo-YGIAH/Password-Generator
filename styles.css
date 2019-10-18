@@ -74,6 +74,7 @@ body {
 	color: white;
 	border-radius: calc((1.2em + 10px) / 2);
 	margin-bottom: 12px;
+	background-color: grey;
 }
 
 .active {
